@@ -1,10 +1,10 @@
 {
-  "name": "seeker",
+  "name": "seek-dep",
   "version": "0.1.0",
   "description": "",
-  "main": "index.js",
+  "main": "output/index.js",
   "scripts": {
-    "compile": "babel ./ -d output --ignore node_modules,output",
+    "compile": "babel ./ -d output --ignore node_modules,output,test/sample",
     "pretest": "npm run compile",
     "test": "jasmine JASMINE_CONFIG_PATH=test/jasmine.json"
   },
