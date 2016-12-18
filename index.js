@@ -50,17 +50,17 @@ function addFileNode(fileNode) {
     leakDepMap.delete(fileNode.filename);
 }
 
-async function fileProcess(file) {
+async function fileProcess(root, file) {
     let extname = path.extname(file).substring(1).toLowerCase();
     let process = PROCESSORS[extname] || PROCESSORS[TYPE_RES];
-    let fileNode = await process(file);
+    let fileNode = await process(file, root);
     addFileNode(fileNode);
 }
 
 export default async function (dir, excludes = []) {
     allFileMap = new Map();
     leakDepMap = new Map();
-    await traverse(dir, excludes, fileProcess);
+    await traverse(dir, excludes, fileProcess.bind(null, dir));
     if (leakDepMap.size) {
         let error = new Error('unreferenced dependences');
         error.files = Array.from(leakDepMap.values());
