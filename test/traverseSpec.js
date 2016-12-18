@@ -12,7 +12,7 @@ describe('traverse', () => {
         let dir = path.resolve(__dirname, '../../test/sample');
         let files = [];
         await traverse(dir, [path.resolve(dir, 'src/util')], file => files.push(file));
-        expect(files.length).toEqual(5);
+        expect(files.length).toEqual(6);
         done();
     });
 
