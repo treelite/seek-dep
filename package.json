@@ -1,9 +1,10 @@
 {
   "name": "seek-dep",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Find out all dependencies between HTML, CSS, ES6 Modules and images.",
   "author": "treelite <c.xinle@gmail.com>",
   "main": "output/index.js",
+  "files": ["output"],
   "scripts": {
     "compile": "babel ./ -d output --ignore node_modules,output,test/sample",
     "pretest": "npm run compile",
