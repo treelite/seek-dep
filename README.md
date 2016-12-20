@@ -36,6 +36,6 @@ interface Dependence {
     end: number; // the end of location in the host file
     len: number; // the reference path's length
     relativeDir: string; // dir name of the reference path
-    file: File;
+    file: File | null;
 }
 ```
