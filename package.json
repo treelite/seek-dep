@@ -1,6 +1,6 @@
 {
   "name": "seek-dep",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Find out all dependencies between HTML, CSS, ES6 Modules and images.",
   "author": "treelite <c.xinle@gmail.com>",
   "main": "output/index.js",
